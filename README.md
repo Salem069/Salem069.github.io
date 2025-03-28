@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,6 +11,14 @@
     <h1>Sung Jin-Woo</h1>
     <p>The Shadow Monarch from <em>Solo Leveling</em></p>
   </header>
+
+  <nav>
+    <ul>
+      <li><a href="#bio">Biography</a></li>
+      <li><a href="#abilities">Abilities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
 
   <section id="bio">
     <h2>Biography</h2>
@@ -34,5 +43,19 @@
   <footer>
     <p>© 2025 Solo Leveling Fanpage. All rights reserved.</p>
   </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        window.scrollTo({
+          top: target.offsetTop - 50,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
